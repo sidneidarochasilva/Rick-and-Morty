@@ -1,0 +1,9 @@
+<app-header
+(searchQuery)="filterItems($event)"
+></app-header>
+
+<app-list-characters
+  [listCharacters]="newlistCharacters"
+  [nextPage]="pageUrl"
+  (PageUrl)="onNextPage($event)"
+></app-list-characters>

@@ -1,27 +1,50 @@
-# RickAndMorty
+## Rick and Morty Characters
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.4.
+Este é um projeto Angular que exibe uma lista de personagens da série Rick and Morty, permitindo visualizar detalhes de cada personagem. O projeto possui uma funcionalidade de autenticação básica para proteger as rotas que exibem os personagens.
 
-## Development server
+## Instalação
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+1- Certifique-se de ter o Node.js instalado em sua máquina.
+2 - Clone este repositório para o seu ambiente local.
+3 - Navegue até o diretório raiz do projeto.
+4 - Execute o comando npm install para instalar as dependências.
 
-## Code scaffolding
+## Executando o projeto
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Após a instalação, você pode executar o projeto localmente usando o servidor de desenvolvimento.
 
-## Build
+1 - No diretório raiz do projeto, execute o comando ng serve para iniciar o servidor de desenvolvimento.
+2 - Abra o navegador e acesse http://localhost:4200/ para visualizar o aplicativo.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Funcionalidades
 
-## Running unit tests
+Página de login
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+A página de login permite que os usuários autentiquem-se fornecendo um nome de usuário e senha.
+A autenticação é simulada e aceita as seguintes credenciais:
 
-## Running end-to-end tests
+Usuário: admin
+Senha: 1234
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Após a autenticação bem-sucedida, o usuário é redirecionado para a página inicial.
 
-## Further help
+Página inicial
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+A página inicial exibe uma lista de personagens da série Rick and Morty.
+Os personagens são obtidos de uma API usando o serviço HomeService.
+A lista de personagens é exibida no componente ListCharactersComponent.
+O componente ListCharactersComponent suporta rolagem infinita, carregando mais personagens quando o usuário alcança o final da página.
+O componente ListCharactersComponent possui uma caixa de pesquisa que filtra os personagens com base no nome.
+Ao clicar em um personagem, o usuário é redirecionado para a página de detalhes do personagem.
+
+Página de detalhes do personagem
+
+A página de detalhes do personagem exibe informações detalhadas sobre um personagem específico.
+O componente DetailsCharacterComponent é responsável por exibir os detalhes do personagem.
+O componente recebe os dados do personagem por meio de um parâmetro na URL.
+
+Proteção de rotas
+
+O aplicativo usa o AuthGuard para proteger as rotas da página inicial e da página de detalhes do personagem.
+O AuthGuard verifica se o usuário está autenticado antes de permitir o acesso às rotas protegidas.
+Caso o usuário não esteja autenticado, ele é redirecionado para a página de login.

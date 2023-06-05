@@ -1,0 +1,26 @@
+<nav class="navbar bg-body-tertiary example-card">
+  <div class="container-fluid">
+    <a class="navbar-brand">Rick and Morty</a>
+
+    <form class="d-flex" role="search">
+      <div class="example-button-row" *ngIf="hiddenSearch">
+        <input
+          class="me-2 p-3"
+          type="text"
+          (input)="filterList($event.target)"
+          placeholder="Busque por aqui"
+        />
+      </div>
+    </form>
+
+    <mat-icon class="mat-icon" [matMenuTriggerFor]="menu"
+      >account_circle</mat-icon
+    >
+    <mat-menu #menu="matMenu" style="width: 280px;" >
+      <button mat-menu-item>Perfil</button>
+      <button mat-menu-item
+      (click)="logout()"
+      >Sair</button>
+    </mat-menu>
+  </div>
+</nav>

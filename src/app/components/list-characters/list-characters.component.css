@@ -1,0 +1,11 @@
+.example-card {
+  width: 300px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+.mat-card-header {
+  display: block;
+}
+.example-card:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.9)!important;
+}
